@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Css学习</title>
+	<style>
+	body{font-size: 16px;background: gray;}
+	button{
+		padding: 6px  16px;
+		border: 1px solid #446d88;
+		background: #58a linear-gradient(hsla(0,0%,100%,.2),
+                                 transparent);
+		border-radius: 4px;
+		box-shadow: 0 1px 5px gray;
+		color: white;
+		text-shadow: 0 -1px 1px #335166;
+		/*font-size: 20px;*/
+		line-height: 30px;
+		/*以下做出改进*/
+		/*可将line-height改为1.5*/
+		line-height: 1.5;
+		/*可把font-size改成百分比*/
+		font-size: 125%;
+		/*px换成em,以下属性根据自身字体大小来决定*/
+		padding: .3em .8em;
+		border-radius: .2em;
+		box-shadow: 0 .05em .25em gray;
+		text-shadow: 0 -.05em .05em #335166;
+		/*修改颜色*/
+		box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+		text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+	}
+	button.cancel{
+		background-color: #c00;
+	}
+	button.ok{
+		background-color: #6b0;
+	}
+
+	hr{
+		height: .5em;
+		background: currentColor;
+	}
+
+	span{color: blue;border: 1px solid black;}
+	.extra span{color: inherit;}
+
+	.wisely{
+		width: 100px; 
+		height: 100px;
+		border: 1px solid black;
+		background: url(img/tr.png) no-repeat top right / 2em 2em,
+					url(img/br.png) no-repeat bottom right / 2em 2em,
+					url(img/bl.png) no-repeat bottom left / 2em 2em;
+
+	}
+	</style>
+</head>
+<body>
+<!-- minimizing the amount of edits necessary to make a change -->
+	<button>Yes!</button>
+	<button class="cancel">Cancel</button>
+	<button class="ok">OK</button>
+
+<!-- CurrentColor -->
+	<hr>
+
+<!-- Inheritance -->
+	<span>jdkfdjkl</span>
+	<div class="extra"><span>djkfdjk</span></div>
+
+<!-- Use shorthands wisely -->
+	<div class="wisely"></div>
+</body>
+</html>
