@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .something-meaningful {
+        background: #655;
+        padding: .8em;
+        width: calc(10em + 2em);
+		margin: .2em;
+    }
+    
+    .something-meaningful > div {
+        max-width: 10em;
+        background: tan;
+        border-radius: .8em;
+        padding: 1em;
+
+        font: 100%/1.5 sans-serif;
+    }
+    
+    .one-element {
+        outline: .8em solid #655;
+        box-shadow: 0 0 0 .4em #655;/*计算最大值*/
+
+        background: tan;
+        padding: 1em;
+        border-radius: .8em;
+		font: 100%/1.5 sans-serif;
+        max-width: 10em;
+        margin: 1em;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="something-meaningful">
+        <div>
+            I have a nice subtile inner rouding, don't I look pretty?
+        </div>
+    </div>
+    <!-- 将以上的效果由两个元素变成一个 -->
+    <div class="one-element">
+        I have a nice subtile inner rouding, don't I look pretty?
+    </div>
+</body>
+
+</html>

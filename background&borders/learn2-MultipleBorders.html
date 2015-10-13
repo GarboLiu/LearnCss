@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backgrund&Borders</title>
+	<style>
+	body {
+		background: gray;
+	}
+	.multiple-borders-boxshadow {
+		width: 100px;
+		height: 60px;
+		margin: 25px;
+		background: yellowgreen;
+		box-shadow: 0 0 0 10px #655, 
+					0 0 0 15px deeppink,
+					0 2px 5px 15px rgba(0,0,0,.6);
+
+	}
+	.multiple-borders-outline {
+		width: 100px;
+		height: 60px;
+		margin: 25px;
+		background: yellowgreen;
+		border: 10px solid #655;
+		outline: 15px solid deeppink; 
+		margin-top: 130px;
+	}
+	</style>
+</head>
+<body>
+<!-- 多边框的各种解决方法 -->
+<!-- 多边框 Multiple Borders，box-shadow solution  -->
+	<div class="multiple-borders-boxshadow"></div>
+<!-- 多边框 Multiple Borders，box-shadow solution  -->
+	<div class="multiple-borders-outline"></div>
+
+</body>
+</html>

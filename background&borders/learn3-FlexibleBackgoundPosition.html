@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backgrund&Borders</title>
+	<style>
+	body {
+		background: gray;
+	}
+	.background-position {
+		background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat bottom right #58a;/*在该句加上bottom right 是为了防止老版本浏览器无法执行下一句*/
+		background-position: right 20px bottom 10px;
+		/*Styling*/
+		max-width: 10em;
+		min-height: 5em;
+		padding: 10px;
+		color: white;
+		font: 100%/1 sans-serif;
+	}	
+	.background-origin {
+		background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat #58a bottom right;
+		background-origin: content-box;
+		/*Styling*/
+		max-width: 10em;
+		min-height: 5em;
+		padding: 10px;
+		color: white;
+		font: 100%/1 sans-serif;
+		margin-top: 10px;
+	}	
+	.background-calc {
+		background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat #58a;
+		background-position: calc(100% - 20px) calc(100% - 10px);
+		/*Styling*/
+		max-width: 10em;
+		min-height: 5em;
+		padding: 10px;
+		color: white;
+		font: 100%/1 sans-serif;
+		margin-top: 10px;
+	}
+	</style>
+</head>
+<body>
+
+<!-- Flexible background positioning的各种解决办法 -->
+<!-- 利用background-position -->
+	<div class="background-position"></div>
+<!-- 每次修改padding值需要更新3个地方，所以利用origin可以更好的解决 -->
+	<div class="background-origin"></div>
+<!-- calc() solution -->
+	<div class="background-calc"></div>
+</body>
+</html>
