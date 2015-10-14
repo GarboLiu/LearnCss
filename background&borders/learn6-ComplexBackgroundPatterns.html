@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Complex Background Patterns</title>
+	<style>
+	body{background: gray;}
+	div{width: 200px;height: 200px;margin: 10px;}
+	.grids{
+		background: white;
+		background-image: 
+		linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 0),
+		linear-gradient(rgba(200,0,0,.5) 50%, transparent 0);
+		background-size: 30px 30px;
+	}
+	.grids2{
+		background: #58a;
+		background-image: 
+		linear-gradient(white 1px, transparent 0),
+		linear-gradient(90deg, white 1px, transparent 0);
+		background-size: 30px 30px;
+	}
+	.complex-grids3{
+		width: 400px;
+		height: 400px;
+		background: #58a;
+		background-image: 
+		linear-gradient(white 2px, transparent 0),
+		linear-gradient(90deg, white 2px, transparent 0),
+		linear-gradient(hsla(0,0%,100%,.3) 1px, transparent 0),
+		linear-gradient(90deg, hsla(0,0%,100%,.3) 1px, transparent 0);
+		background-size: 75px 75px, 75px 75px,
+			15px 15px, 15px 15px;
+	}
+	.polka-dot{
+		background: #655;
+		background-image: radial-gradient(tan 30%, transparent 0);
+		background-size: 30px 30px;
+	}	
+	.complex-polka-dot{
+		background: #655;
+		background-image: 
+		radial-gradient(tan 30%, transparent 0),
+		radial-gradient(tan 30%, transparent 0);
+		background-size: 30px 30px;
+		background-position: 0 0, 15px 15px;
+	}
+	.checkerboards1{
+		background: #eee;
+		background-image: 
+		linear-gradient(45deg, #bbb 50%, transparent 0);
+		background-size: 50% 50%;
+	}	
+	.checkerboards2{
+		background: #eee;
+		background-image: 
+		linear-gradient(45deg, transparent 50%, #bbb 0);
+		background-size: 50% 50%;
+	}
+	.checkerboards3{
+		background: #eee;
+		background-image: 
+		linear-gradient(45deg, #bbb 25%, transparent 0),
+		linear-gradient(45deg, transparent 75%, #bbb 0);
+		background-size: 30px 30px;
+		/*background-position: 0 0, 15px 15px;*/
+	}	
+	.checkerboards4{
+		background: #eee;
+		background-image: 
+		linear-gradient(45deg, #bbb 25%, transparent 0),
+		linear-gradient(45deg, transparent 75%, #bbb 0),
+		linear-gradient(45deg, #bbb 25%, transparent 0),
+		linear-gradient(45deg, transparent 75%, #bbb 0);
+		background-size: 30px 30px;
+		background-position: 0 0, 15px 15px, 15px 15px, 0 0;
+	}
+	.improve-checkerboards{
+		background: #eee;
+		background-image: 
+		linear-gradient(45deg, #bbb 25%, transparent 0, transparent 75%, #bbb 0),
+		linear-gradient(45deg, black 25%, transparent 0, transparent 75%, black 0);
+		background-size: 30px 30px;
+		background-position: 0 0, 15px 15px;
+	}
+	</style>
+</head>
+<body>
+    <!-- Grids -->
+    <div class="grids"></div>
+    <div class="grids2"></div>
+    <div class="complex-grids3"></div>
+
+    <!-- Polka dot 圆点-->
+    <div class="polka-dot"></div>
+    <div class="complex-polka-dot"></div>
+
+    <!-- Checkerboards 棋盘-->
+    <div class="checkerboards1"></div>
+    <div class="checkerboards2"></div>
+    <!-- 结合以上两个，让三角形缩小一半-->
+	<div class="checkerboards3"></div>
+	<!-- 完整的棋盘 -->
+	<div class="checkerboards4"></div>
+	<!-- 由4个linear-gradient变成两个，improve -->
+	<div class="improve-checkerboards"></div>
+
+</body>
+
+</html>

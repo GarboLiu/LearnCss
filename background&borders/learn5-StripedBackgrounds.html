@@ -3,7 +3,7 @@
 <head>
 	<title>Striped Backgrounds</title>
 	<style>
-	div{width: 100px;height: 100px;margin-bottom: 10px;}
+	div{width: 200px;height: 200px;margin-bottom: 10px;}
 	.linear1{background: linear-gradient(#fb3, #58a);}
 	.linear2{background: linear-gradient(#fb3 20%, #58a 80%);}
 	.linear3{background: linear-gradient(#fb3 40%, #58a 60%);}
@@ -17,11 +17,36 @@
 	}
 	.linear-size0 {
 		background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);/*第二位置设置为零，会根据前面一个位置作为其位置*/
-		background-size: 100% 40px;
+		background-size: 100% 45px;
 	}
 
 	.vertical-linear{
-		background: 
+		background: linear-gradient(to right, /*or 90deg*/ #fb3 50%, #58a 0 );
+		background-size: 30px 100%;
+	}	
+	.diagonal-linear{
+		background: linear-gradient(45deg, 
+			#fb3 25%, #58a 0,#58a 50%, 
+			#fb3 0, #fb3 75%, #58a 0);
+		background-size: 30px 30px;
+	}	
+	.diagonal-linear-width{
+		background: linear-gradient(45deg, 
+			#fb3 25%, #58a 0,#58a 50%, 
+			#fb3 0, #fb3 75%, #58a 0);
+		background-size: 42px 42px;
+	}	
+	.diagonal-linear-better{
+		background: repeating-linear-gradient(60deg, 
+			#fb3, #fb3 15px, #58a 0, #58a 30px);
+		background-size: 100% 100%;
+	}
+	.diagonal-linear-color{
+		background: #58a;
+		background-image: repeating-linear-gradient(30deg,
+			hsla(0,0%,100%,.1), 
+			hsla(0,0%,100%,.1) 15px,
+			transparent 0, transparent 30px);
 	}
 	</style>
 </head>
@@ -37,5 +62,13 @@
 
 <!-- vertical stripes 垂直条纹 -->
 	<div class="vertical-linear"></div>
+<!-- diagonal stripes 斜条纹 -->
+	<div class="diagonal-linear"></div>
+	<!-- 上面的diagonal-linear看上去会比垂直和水平的宽度窄，，根据勾股计算其宽度 -->
+	<div class="diagonal-linear-width"></div>
+	<!-- 不能灵活的变化角度，角度修改条纹会出现其他效果，有更好的办法创建斜条纹 repeating-linear-gradient-->
+	<div class="diagonal-linear-better"></div>
+	<!-- 灵活改变颜色，利用transparent -->
+	<div class="diagonal-linear-color"></div>
 </body>
 </html>

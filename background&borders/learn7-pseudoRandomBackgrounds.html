@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pseudo Random Backgrounds</title>
+	<style>
+		div{
+			width: 800px;
+			height: 200px;
+			margin: 10px;
+		}
+		.normal{
+			background: linear-gradient(90deg, #fb3 15%, #655 0, #655 40%, #ab4 0, #ab4 65%, hsl(29, 40%, 90%) 0);
+			background-size: 80px 100%;
+		}
+		.random1{
+			background: hsl(29, 40%, 90%);
+			background-image: 
+			linear-gradient(90deg, #fb3 10px, transparent 0),
+			linear-gradient(90deg, #655 20px, transparent 0),
+			linear-gradient(90deg, #ab4 20px, transparent 0);
+			background-size: 80px 100%, 60px 100%, 40px 100%;
+		}			
+		.random2{
+			background: hsl(29, 40%, 90%);
+			background-image: 
+			linear-gradient(90deg, #fb3 10px, transparent 0),
+			linear-gradient(90deg, #655 20px, transparent 0),
+			linear-gradient(90deg, #ab4 20px, transparent 0);
+			background-size: 81px 100%, 61px 100%, 41px 100%;
+		}		
+		.test{width:240px;border:1px solid black}
+	</style>
+</head>
+<body>
+	<!-- 伪随机背景 -->
+	<div class="normal"></div>
+	<!-- 利用多个渐变以及不同的大小和位置产生伪随机 -->
+	<div class="random1"></div>
+	<div class="test"></div>
+	<!-- 查看random1效果，会发现它会有一个重复的距离240px。可根据最小公倍数（LCM）来结算,8 6 4/24,24*10=240, 要想让随机效果更好，可让3个距离变成素数-->
+	<div class="random2"></div>
+</body>
+</html>
