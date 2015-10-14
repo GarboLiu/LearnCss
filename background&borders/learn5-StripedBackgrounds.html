@@ -2,8 +2,40 @@
 <html>
 <head>
 	<title>Striped Backgrounds</title>
+	<style>
+	div{width: 100px;height: 100px;margin-bottom: 10px;}
+	.linear1{background: linear-gradient(#fb3, #58a);}
+	.linear2{background: linear-gradient(#fb3 20%, #58a 80%);}
+	.linear3{background: linear-gradient(#fb3 40%, #58a 60%);}
+	.linear-size {
+		background: linear-gradient(#fb3 50%, #58a 50%);/*位置相同不会产生渐变*/
+		background-size: 100% 30px;
+	}
+	.linear-size0 {
+		background: linear-gradient(#fb3 50%, #58a 0);/*第二位置设置为零，会根据前面一个位置作为其位置*/
+		background-size: 100% 30px;
+	}
+	.linear-size0 {
+		background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);/*第二位置设置为零，会根据前面一个位置作为其位置*/
+		background-size: 100% 40px;
+	}
+
+	.vertical-linear{
+		background: 
+	}
+	</style>
 </head>
 <body>
+<!-- horizontal stripes 水平条纹 -->
+	<div class="linear1"></div>
+	<div class="linear2"></div>
+	<div class="linear3"></div>
 
+	<div class="linear-size"></div>
+	<div class="linear-size0"></div>
+	<div class="linear-size3"></div>
+
+<!-- vertical stripes 垂直条纹 -->
+	<div class="vertical-linear"></div>
 </body>
 </html>
