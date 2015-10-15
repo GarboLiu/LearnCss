@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flexible Ellipses</title>
+	<meta charset="utf-8">
+	<style>
+	div{width: 16em;height: 10em;margin: 1em;background: #fb3;display: inline-block;}
+	.half-ellipses1{
+		border-radius: 50% / 100% 100% 0 0;
+	}
+	.half-ellipses2{
+		border-radius: 50% / 0 0 100% 100%;
+	}
+	.half-ellipses3{
+		border-radius: 100% 0 0 100%/ 50%;
+	}
+	.half-ellipses4{
+		border-radius: 0 100% 100% 0 / 50%;
+	}
+	.quarter-ellipses{
+		border-radius: 100% 0 0 0;
+	}
+	.parallelograms{
+		height: auto;
+		width: auto;
+		text-align: center;
+		color: #fff;
+		transform: skewX(-45deg);
+		padding: .5em 1em;
+		font:bold 200%/1 sans-serif;
+	}
+	.parallelograms > div {
+		width: auto;
+		height: auto;
+		margin: 0;
+		transform: skewX(45deg);
+	}
+	</style>
+</head>
+<body>
+<p>1.border-radius:100px/75px由horizontal和vertical radius组成，10px/5px 20px = 10px 10px 10px 10px / 5px 20px 5px 20px</p> 
+<p>2.border-radius值可以为％</p>
+<p>一 . 半个椭圆</p>
+<div class="half-ellipses1"></div>
+<div class="half-ellipses2"></div>
+<div class="half-ellipses3"></div>
+<div class="half-ellipses4"></div>
+
+<p>二 . 4分之椭圆</p>
+<div class="quarter-ellipses"></div>
+
+<p>三 . 平行四边形</p>
+<div class="parallelograms">CLICK ME</div>
+<div class="parallelograms">
+	<div>CLICK ME</div>
+</div>
+</body>
+</html>
