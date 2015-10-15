@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Continuous Image Borders</title>
+	<style>
+	div{margin: 10px;}
+	.something-meaningful{
+		max-width: 21em;
+		background: url(../img/stone-art.jpg);
+		background-size: cover;
+		padding: .5em;
+	}
+	.something-meaningful > div{
+		background: white;
+		padding: 1em;
+	}
+
+	.one-something-meaningful{
+		border: 1em solid transparent;
+		max-width: 18em;
+		background: 
+		linear-gradient(white, white) padding-box,
+		url(../img/stone-art.jpg) border-box 0/cover;
+		padding: 1em;
+
+	}
+	.envelope{
+		padding: 1em;
+		border: 1em solid transparent;
+		background: 
+		linear-gradient(white, white) padding-box,
+		repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;
+		max-width: 20em;
+			font: 100%/1.6 Baskerville, Palatino, serif;
+
+	}
+	</style>
+</head>
+<body>
+<!-- 图片边框 -->
+	<div class="something-meaningful">
+		<div>
+			I have a nice stone art border,
+			I have a nice stone art border,
+			I have a nice stone art border,
+			don't I look pretty?
+		</div>
+	</div>
+<!-- 一个元素的图片边框 -->
+	<div class="one-something-meaningful">
+			I have a nice stone art border,
+			I have a nice stone art border,
+			I have a nice stone art border,
+			I have a nice stone art border,
+			don't I look pretty?
+	</div>
+<!-- 信封边框 background-->
+	<div class="envelope">
+		Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.
+	</div>
+<!-- 信封边框 border-image 缺点宽度不能用em，修改字体大小时改动大-->
+
+</body>
+</html>
