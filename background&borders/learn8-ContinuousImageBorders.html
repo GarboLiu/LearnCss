@@ -32,7 +32,30 @@
 		repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;
 		max-width: 20em;
 			font: 100%/1.6 Baskerville, Palatino, serif;
+	}	
+	.envelope-border{
+		padding: 1em;
+		border: 16px solid transparent;
+		border-image: 16
+		repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em, #58a 0, #58a 3em, transparent 0, transparent 4em);
+		max-width: 20em;
+			font: 100%/1.6 Baskerville, Palatino, serif;
+	}
+	@keyframes ants{ to {background-position: 100%;}}
+	.marching-ants{
+		padding: 1em;
+		border: 1px solid transparent;
+		background: 
+		linear-gradient(white, white) padding-box,
+		repeating-linear-gradient(45deg, black 0, black 25%, white 0, white 50%) 0/.6em .6em;
+		max-width: 20em;
+		animation: ants 12s linear infinite;
+	}
 
+	.footnote{
+		border-top: .2em solid transparent;
+		border-image: 100% 0 0 linear-gradient(90deg, black 4em, transparent 0);
+		
 	}
 	</style>
 </head>
@@ -58,7 +81,16 @@
 	<div class="envelope">
 		Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.
 	</div>
-<!-- 信封边框 border-image 缺点宽度不能用em，修改字体大小时改动大-->
+<!-- 信封边框 border-image 16为border-image-slice由border-width决定，且固定单位只能为px，造成修改值不易-->
+	<div class="envelope-border">
+		Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.
+	</div>
+<!-- 行走的蚂蚁动画 -->
+	<div class="marching-ants">
+		Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.
+	</div>
+<!-- dorder-image的强大作用 -->
+	<div class="footnote"><sup>1</sup> This is a footnote.</div>
 
 </body>
 </html>
