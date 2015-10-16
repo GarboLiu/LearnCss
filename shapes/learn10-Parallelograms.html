@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flexible Ellipses</title>
+	<meta charset="utf-8">
+	<style>
+	div { height: auto;width: auto;margin: 1em;background: #fb3;display: inline-block;color: #fff;text-align: center;}
+	.parallelograms{
+		transform: skewX(45deg);
+		padding: .5em 1em;
+		font:bold 200%/1 sans-serif;
+	}
+	.parallelograms > div {
+		margin: 0;
+		transform: skewX(-45deg);
+	}
+	.pseudo-parallelograms {
+		position:  relative;/*it's very important*/
+
+		padding: .5em 1em;
+		font: bold 200%/1 sans-serif;
+		background: transparent;
+	}
+	.pseudo-parallelograms:before {
+		content: '';/*To generate the box*/
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		background: #58a;
+		z-index: -1;
+		transform: skewX(45deg);
+	}
+	.inner-rounding {
+		position: relative;
+        background: tan;
+        padding: 2em;
+        border-radius: .8em;
+		font: 100%/1.5 sans-serif;
+        max-width: 10em;
+        margin: 1em;
+	}
+	.inner-rounding::before {
+		content: '';
+		position: absolute;
+		top: -1em; right: -1em; bottom: -1em; left: -1em;
+		background: #655;
+		z-index: -1;
+	}
+	.nav {
+		font: 100%/1.5 sans-serif;
+		text-decoration: none;
+		position: relative;
+		padding: 1em;
+	}
+	.nav:hover {
+		margin-left: .5em;
+		transition: all .4s;
+		color: #fff;
+	}
+	.nav:hover::before {
+		content: '';
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		background: #58a;
+		z-index: -1;
+		transform: skewX(-45deg);
+
+	}
+
+
+	</style>
+</head>
+<body>
+
+<p>平行四边形</p>
+<div class="parallelograms">CLICK ME</div>
+<div class="parallelograms">
+	<div>CLICK ME</div>
+</div>
+<p>单冒号(:)用于css3伪类， 双冒号(::)用于css3伪元素，在css3引入区分伪类和伪元素，在css2单冒号(:)为伪元素</p>
+<div class="pseudo-parallelograms">CLICK ME</div>
+<p>利用伪元素解决inner rounding的问题</p>
+<div class="inner-rounding">
+	I have a nice subtile inner rouding, don't I look pretty?
+</div>
+<p>导航栏样式：hover效果</p>
+<a href="" class="nav">CLICK ME</a>
+</body>
+</html>

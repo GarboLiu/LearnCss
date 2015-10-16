@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diamond Images</title>
+	<meta charset="utf-8">
+	<style>
+	.picture {
+		width: 200px;
+		height: 200px;
+		transform: rotate(45deg);
+		overflow: hidden;
+		border: 1px solid black;
+		margin: 3em;
+	}
+	.picture > img {
+		max-width: 100%;
+		width: 200px;
+		transform: rotate(-45deg) scale(1.42);
+	}
+	img {
+		max-width: 200px;
+		-webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+		clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+		transition: 1s;
+	}
+	img:hover {
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+	</style>
+</head>
+<body>
+<p>利用两个元素制作菱形图案</p>
+	<div class="picture">
+		<img src="../img/1.jpg" alt="">
+	</div>
+<p>一个元素，利用clip-path。！部分浏览器不支持</p>
+<img src="../img/1.jpg" alt="">
+</body>
+</html>
