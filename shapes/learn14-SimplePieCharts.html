@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Pie Charts</title>
+	<meta charset="utf-8">
+	<style>
+	.pie {
+		width: 100px; height: 100px;
+		border-radius: 50%;
+		background: yellowgreen;
+		background-image: linear-gradient(90deg, transparent 50%, #655 0);
+	}
+	.pie::before {
+		content: '';
+		display: block;
+		margin-left: 50%;
+		height: 100%;
+		background-color: inherit;
+		border-radius: 0 100% 100% 0/50%;
+		transform: rotate(.1turn);/*.1turn == 36deg*/
+		transform-origin: 0 50%;/*or just left*/
+		animation: spin 3s linear infinite, bg 6s step-end infinite;
+	}
+	@keyframes spin {
+		to { transform: rotate(.5turn); }
+	}
+	@keyframes bg {
+		50% { background: #655; }
+	}
+
+	.static-pie {
+		display: inline-block;
+		color: transparent;
+		width: 100px; height: 100px;
+		border-radius: 50%;
+		background: yellowgreen;
+		background-image: linear-gradient(90deg, transparent 50%, #655 0);
+	}
+	.static-pie::before {
+		content: '';
+		display: block;
+		margin-left: 50%;
+		height: 100%;
+		background-color: inherit;
+		border-radius: 0 100% 100% 0/50%;
+		transform-origin: 0 50%;/*or just left*/
+		animation: spin 50s linear infinite, bg 100s step-end infinite;
+		animation-play-state: paused;
+		animation-delay: inherit;
+	}
+	</style>
+</head>
+<body>
+	<p>transform-based solution</p>
+	<p>前3秒，before移动显示出棕色背景，后3秒，before自身变成棕色背景在移动，这方法真是绝妙</p>
+	<div class="pie"></div>
+
+	<p>multiple static pie charts<p>
+	<p>利用animate-delay负数</p>
+	<div class="static-pie">0%</div>
+	<div class="static-pie">20%</div>
+	<div class="static-pie">40%</div>
+	<div class="static-pie">60%</div>
+	<div class="static-pie">80%</div>
+<script>
+function $$(selector, context) {
+	context = context || document;
+	var elements = context.querySelectorAll(selector);
+	return Array.prototype.slice.call(elements);
+}
+
+$$('.static-pie').forEach(function(pie) {
+	var p = pie.textContent;
+	pie.style.animationDelay = '-' + parseFloat(p) + 's';
+});
+</script>
+</body>
+</html>
