@@ -4,10 +4,28 @@
 	<title>One-side Shadows</title>
 	<meta charset="utf-8">
 	<style>
-
+		div{
+			width: 20em;
+			height: 10em;	
+			margin: 1em;		
+		}
+		.one-side-shadow{
+			background: #fb3;
+			box-shadow: 0px 5px 4px -4px black;
+		}
+		.two-adjacent-side-shadow{
+			background: #fb3;
+			box-shadow: 3px 3px 6px -3px black;
+		}
+		.two-opposite-side-shadow{
+			background: #fb3;
+			box-shadow: -5px 0 5px -5px black,5px 0 5px -5px black;
+		}
 	</style>
 </head>
 <body>
-
+	<div class="one-side-shadow"></div>
+	<div class="two-adjacent-side-shadow"></div>
+	<div class="two-opposite-side-shadow"></div>
 </body>
 </html>
