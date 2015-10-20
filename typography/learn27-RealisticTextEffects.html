@@ -2,8 +2,26 @@
 <html>
 <head>
 	<title>Realistic Text Effect 逼真的文字效果</title>
+	<meta charset="utf-8">
+	<style>
+	body {
+		font: 250%/1.6 Baskerville, Palatino, serif;
+	}
+	p {
+		padding: .8em 1em;
+		background: hsl(210, 13%, 60%);
+		color: hsl(210, 13%, 30%);
+		text-shadow: 0 1px 1px hsla(0, 0%, 100%, .8);
+	}
+	p + p {
+		background: hsl(210, 13%, 30%);
+		color: hsl(210, 13%, 60%);
+		text-shadow: 0 -1px 1px black;
+	}
+	</style>
 </head>
 <body>
-
+<p>“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
+<p>“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
 </body>
 </html>
