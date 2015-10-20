@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hyphenation</title>
+	<meta charset="utf-8">
+	<style>
+	div{
+		width: 8em;
+		font: 180%/1.4 serif;
+		text-align: justify;
+		border: 1px solid black;	
+	}
+	.hyphens{
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+	</style>
+</head>
+<body>
+<p>连字符使用,用于英文断词</p>
+<div>“The only way to get rid of a temptation is to yield to it.”</div>
+<div class="hyphens">“The only way to get rid of a temptation is to yield to it.”</div>
+</body>
+</html>

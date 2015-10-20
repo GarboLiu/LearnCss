@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Tining</title>
+	<meta charset="utf-8">
+	<style>
+	.test{
+		width: 20em;
+		height: 10em;
+		background: red;
+		filter: hue-rotate(180deg);
+		-webkit-filter: hue-rotate(180deg);
+	}
+	.filter{
+		max-width: 640px;
+		transition: 1s filter, 1s -webkit-filter;
+		filter: sepia() saturate(4) hue-rotate(295deg);/*sepia 棕褐色， saturate 饱和度， hue-rotate 色相旋转*/
+		-webkit-filter: sepia() saturate(4) hue-rotate(295deg);
+		margin: 1em;
+	}
+	.filter:hover, .filter:focus {filter:none;-webkit-filter: none;}
+
+	.blending-mode {
+		width: 14em;
+		height: 14em;
+		background-size: cover;
+		background-color: hsl(335, 100%, 50%);
+		background-image: url(../img/1.jpg);
+		background-blend-mode: luminosity;
+		transition: .5s background-color;
+	}
+	.blending-mode:hover {
+		background-color: transparent;
+	}
+	</style>
+</head>
+<body>
+<p>以下均为部分浏览器不兼容，慎用！！！</p>
+<p>Filter-based solution:颜色变化，利用filter</p>
+<div class="test"></div>
+<img class="filter" src="../img/1.jpg" alt="">
+<p>Blending mode solution: 颜色变化， 利用混合模式，可参考ps</p>
+<div class="blending-mode"></div>
+</body>
+</html>
