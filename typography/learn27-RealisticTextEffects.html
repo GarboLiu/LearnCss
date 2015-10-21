@@ -5,23 +5,101 @@
 	<meta charset="utf-8">
 	<style>
 	body {
-		font: 250%/1.6 Baskerville, Palatino, serif;
+		font: 200%/1.6 Baskerville, Palatino, serif;
 	}
-	p {
+	.letterpress1{
 		padding: .8em 1em;
 		background: hsl(210, 13%, 60%);
 		color: hsl(210, 13%, 30%);
 		text-shadow: 0 1px 1px hsla(0, 0%, 100%, .8);
 	}
-	p + p {
+	.letterpress2 {
+		padding: .8em 1em;
 		background: hsl(210, 13%, 30%);
 		color: hsl(210, 13%, 60%);
 		text-shadow: 0 -1px 1px black;
 	}
+	.stroked-text1 {
+		font-size: 300%;
+		background: deeppink;
+		color: white;
+		text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+	}	
+	.stroked-text2 {
+		font-size: 300%;
+		background: deeppink;
+		color: white;
+		text-shadow: 0 0 1px black, 0 0 1px black,
+             0 0 1px black, 0 0 1px black,
+             0 0 1px black, 0 0 1px black;
+	}
+	.stroked-text3 {
+		font-size: 300%;
+		background: deeppink;
+		color: white;
+		text-shadow: 3px 3px black, -3px -3px black, 3px -3px black, -3px 3px black;
+	}
+	h1 text { fill: white; }
+	h1 use {
+		stroke: black; 
+		stroke-width: 6;
+		stroke-linejoin: round;
+	}
+	.bg203{background: #203;}
+	.glowing-text1{
+		text-decoration: none;
+		font-size: 300%;
+		color: #ffc;
+		transition: 1s;
+	}
+	.glowing-text1:hover{
+		text-shadow: 0 0 .1em, 0 0 .3em;
+	}	
+	.glowing-text2{
+		text-decoration: none;
+		font-size: 300%;
+		color: #fff;
+		transition: 1s;
+	}
+	.glowing-text2:hover{
+				filter: blur(.1em);
+		-webkit-filter: blur(.01em);
+	}
+
+	.extruded-text1{
+		font-size: 300%;
+		background: #58a;
+		color: white;
+		text-shadow: 0 1px hsl(0, 0%, 85%),0 2px hsl(0, 0%, 80%),
+		0 3px hsl(0, 0%, 75%), 0 4px hsl(0, 0%, 70%), 0 5px hsl(0, 0%, 65%), 0 5px 10px black;/*0 5px 10px black加上阴影更立体*/
+	}	
+	.extruded-text2{
+		font-size: 300%;
+		background: hsl(0, 50%, 45%);
+		color: white;
+		text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black,5px 5px black, 6px 6px black,
+             7px 7px black, 8px 8px black;
+	}
 	</style>
 </head>
 <body>
-<p>“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
-<p>“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
+<p>Letterpress 凸版印刷</p>
+<p class="letterpress1">“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
+<p class="letterpress2">“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
+
+<p>Stroked text 描边文字</p>
+<div class="stroked-text1">CSS</div>
+<div class="stroked-text2">CSS</div>
+<div class="stroked-text3">CSS</div>
+<p>边框加粗为出现缝隙，利用svg解决</p>
+<h1><svg overflow="visible" width="2em" height="1.2em"><use xlink:href="#css" /><text id="css" y="1em">CSS</text></svg></h1>
+
+<p>Glowing text 发光字体,hover出现效果</p>
+<div class="bg203"><a href="" class="glowing-text1">Glow</a></div>
+<div class="bg203"><a href="" class="glowing-text2">Glow</a></div>
+
+<p>Extruded text 立体文字</p>
+<div class="extruded-text1">CSS3d</div>
+<div class="extruded-text2">CSS3d</div>
 </body>
 </html>
