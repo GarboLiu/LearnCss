@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smooth State Animations</title>
+	<meta charset="utf-8"/>
+	<style>
+	@keyframes panoramic{
+		to {background-position: 100% 0;}
+	}
+	.panoramic{
+		width: 150px;
+		height: 150px;
+		background: url(../img/naxos-greece.jpg);
+		background-size: auto 100%;
+		margin: 1em;
+	}
+	.panoramic1:hover, .panoramic:focus {
+		animation: panoramic 10s linear infinite alternate;
+	}
+	.panoramic2{
+		animation: panoramic 10s linear infinite alternate;
+		animation-play-state: paused;
+	}
+	.panoramic2:hover, .panoramic2:focus {
+		animation-play-state: running;
+	}
+	</style>
+</head>
+<body>
+<p>问题：hover时全景图移动，鼠标离开时如何不跳回原起点？</p>
+<div class="panoramic panoramic1"></div>
+<div class="panoramic panoramic2"></div>
+</body>
+</html>

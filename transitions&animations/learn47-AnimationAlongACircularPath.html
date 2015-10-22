@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animation along a circular path</title>
+    <meta charset="utf-8" />
+    <style>
+    @keyframes spin {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+    
+    .avatar {
+        animation: spin 3s infinite linear;
+        transform-origin: 50% 150px;
+        /* 150px = path radius */
+    }
+    
+    .avatar {
+        display: block;
+        width: 50px;
+        border-radius: 50%;
+        margin: 0 auto 0;
+    }
+    
+    .path {
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        margin: 100px auto;
+        border-radius: 50%;
+        background: #fb3;
+    }
+    
+    .avatar > img {
+        animation: inherit;
+        animation-direction: reverse;
+        width: 50px;
+        border-radius: 50%;
+    }
+    
+    /*一个元素*/
+    @keyframes spin-single{
+		from{
+			transform: rotate(0turn) translateY(-150px) translateY(50%) rotate(1turn);
+		}
+		to{
+			transform: rotate(1turn) translateY(-150px) translateY(50%) rotate(0turn);
+		}
+    }
+    .avatar-single {
+        width: 50px;
+        border-radius: 50%;
+        margin: 0 auto 0;
+        display: block;
+/*        transform:translate(100px, 150px)
+           rotate(.2turn)
+           translate(100px, -150px)
+           translate(100px,50%)
+           rotate(-.2turn)
+           translate(100px, -50%);*/
+        animation: spin-single 3s infinite linear;
+        margin: calc(50% - 25px) auto 0;
+    } 
+
+    .test1{
+    	width: 50px;
+    	height: 50px;
+    	background: yellowgreen;
+    	position: absolute;
+    	top: 1750px; left: 100px;
+    	transform: translate(100px, 50px) rotate(30deg) translate(-100px, -50px);
+    }    
+    .test2{
+    	width: 50px;
+    	height: 50px;
+    	background: skyblue;
+    	position: absolute;
+    	top: 1750px; left: 100px;
+    	transform: rotate(30deg);
+    	transform-origin: 100px 50px;
+    }     
+    .test3{
+    	width: 50px;
+    	height: 50px;
+    	background: rgba(200,10,90,.3);
+    	position: absolute;
+    	top: 1750px; left: 100px;
+    	transform: translate(100px, 50px) rotate(30deg) translate(-100px, -50px) rotate(-30deg);
+    }  
+    </style>
+</head>
+
+<body>
+    <div class="path">
+        <img src="../img/1.jpg" alt="" class="avatar">
+    </div>
+    <p>从上面运动可看出avatar会做自转，这样子会影响观看效果</p>
+    <p>方法1：两个元素</p>
+    <div class="path">
+        <div class="avatar">
+            <img src="../img/1.jpg">
+        </div>
+    </div>
+    <p>方法2：一个元素，与transform-origin无关</p>
+    <div class="path">
+        <img src="../img/1.jpg" alt="" class="avatar-single">
+    </div>
+	<p>方法2的技术难点</p>
+    <div class="test1"></div>
+    <div class="test2"></div>
+    <div class="test3"></div>
+</body>
+
+</html>

@@ -2,8 +2,37 @@
 <html>
 <head>
 	<title>Elasic transitions</title>
+	<meta charset="utf-8"/>
+	<style>
+	body{
+		background: linear-gradient(skyblue, white 450px, yellowgreen 0);
+		min-height: 100vh;
+	}
+	.ball {
+		width: 0;
+		height: 0;
+		padding: 1.5em;
+		margin: auto;
+		border-radius: 50%;
+		background: red radial-gradient(at 30% 30%, #ffd, red);
+		animation: bounce 3s cubic-bezier(.1,.25,1,.25) forwards;
+	}
+	@keyframes bounce {
+		60%,80%,to{
+			transform: translateY(400px);
+			animation-timing-function: ease-out;
+		}
+		70% {
+			transform: translateY(300px);
+		}
+		90% {
+			tranform: translateY(360px);
+		}
+	}
+	/*to与100%相同*/
+	</style> 
 </head>
 <body>
-
+	<div class="ball"></div>
 </body>
 </html>
